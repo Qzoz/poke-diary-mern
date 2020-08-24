@@ -4,6 +4,9 @@
   --cl-primary: 0, 0, 0;
   --cl-secondary: 255, 255, 255;
   --cl-alternate: 136, 136, 136;
+  @media (max-width: 425px) {
+    font-size: 13px;
+  }
 }
 
 * {
