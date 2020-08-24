@@ -1,0 +1,149 @@
+@import "../../index.scss";
+
+.search-card {
+  margin-bottom: 1rem;
+  min-width: 19rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: getRGBA($primary, 0.125);
+  .card-head {
+    padding: 1rem;
+    > h2 {
+      color: getRGBA($primary, 0.75);
+      text-align: center;
+    }
+  }
+  .card-body {
+    padding: 2.5rem 1rem 1.5rem;
+    border-radius: 1rem;
+    background-color: getRGB($secondary);
+    .search-comments {
+      padding: 0.25rem;
+      font-size: 0.9rem;
+      color: getRGBA($alternate, 0.5);
+      text-align: center;
+      user-select: none;
+      transition: 0.1s ease;
+      &.error {
+        transform: scale(1.25);
+        color: getRGBA($primary, 1);
+      }
+    }
+  }
+  .card-foot {
+    padding: 0.75rem 0.25rem 0;
+    color: getRGBA($alternate, 0.75);
+    text-align: center;
+    > p:first-child {
+      padding-bottom: 0.5rem;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.search-bar {
+  min-width: 15rem;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: getRGBA($primary, 0.1);
+  border-radius: 10rem;
+  input[type="text"] {
+    font-family: $font-montserrat-alt;
+    &::placeholder {
+      color: getRGBA($alternate, 0.75);
+    }
+  }
+  .first {
+    min-width: 10rem;
+    width: 80%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    line-height: 1.5rem;
+    font-size: 1.25rem;
+    padding-left: 1.5rem;
+    color: getRGB($primary);
+  }
+  .last {
+    min-height: 3.5rem;
+    min-width: 4rem;
+    font-size: 1.5rem;
+    border-radius: 10rem;
+    background-color: getRGB($primary);
+    color: getRGB($secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease;
+    &:hover {
+      background-color: getRGB($primary);
+      color: getRGBA($secondary, 0.75);
+    }
+    &:active {
+      background-color: getRGBA($primary, 0.75);
+    }
+  }
+}
+
+.search-general-container {
+  margin: 2rem 0.125rem 1rem;
+  box-shadow: 0px 0px 12px -7px getRGBA($primary, 0.75);
+  padding: 1.5rem 0.125rem 0;
+  > h2 {
+    text-align: right;
+    margin-right: 1rem;
+    padding: 1rem 0.5rem;
+    color: getRGBA($primary, 0.65);
+    position: relative;
+    &::after,
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      height: 4px;
+      background-color: getRGBA($primary, 0.25);
+      right: 0;
+    }
+    &::after {
+      width: 30%;
+      bottom: 0;
+    }
+    &::before {
+      width: 80%;
+      top: 0;
+    }
+  }
+  .flex-horizontal-container {
+    display: flex;
+    padding: 1.5rem 0.5rem;
+  }
+  .wrap {
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .no-wrap {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .fcol {
+    flex-direction: column;
+  }
+}
+
+
+.not-found-fallback {
+  color: getRGB($alternate);
+  background-color: getRGBA($primary, 0.125);
+  font-size: 1.25rem;
+  text-align: center;
+  width: 80%;
+  margin: 4rem auto 0 auto;
+  padding: 1rem 0.75rem;
+  border-radius: 1rem;
+}

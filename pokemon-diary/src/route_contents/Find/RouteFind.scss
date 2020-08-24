@@ -1,0 +1,154 @@
+@import "../../index.scss";
+
+$break-flg-1: 425px;
+
+.poke-find-form-cont {
+  background-color: getRGBA($primary, 0.125);
+  color: getRGB($primary);
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  .form-head {
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  .form-btn-cont {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    @media (max-width: $break-flg-1) {
+      justify-content: center;
+    }
+  }
+}
+
+.form-body {
+  padding: 1rem;
+  .form-groups {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .form-group-row {
+    flex: 1;
+    min-width: 19rem;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    > .form-child-1 {
+      flex: 2;
+      color: getRGB($alternate);
+    }
+    > .form-child-2 {
+      flex: 3;
+    }
+  }
+}
+
+.dd-full-width {
+  width: 100%;
+}
+
+.form-divider {
+  border: 0;
+  margin: 0.5rem 0.25rem;
+  height: 0.25rem;
+  border-radius: 1rem;
+  background-color: getRGBA($secondary, 0.75);
+  box-shadow: 0px 0px 3px -1px getRGBA($primary, 0.75);
+}
+
+.slider-block-cont {
+  width: 95%;
+  margin: 0 auto;
+  .slider-block {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .slider-block-child {
+      flex: 1;
+    }
+    .slider-block-field {
+      text-align: center;
+    }
+    .slider-block-name {
+      text-align: center;
+      color: getRGB($alternate);
+    }
+  }
+}
+
+.form-btn {
+  border: 0;
+  outline: 0;
+  padding: 0.75rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.125rem;
+  position: relative;
+  overflow: hidden;
+  transition: 0.25s linear;
+  z-index: 0;
+}
+
+.btn-reset {
+  background-color: getRGBA($alternate, 0.2);
+  color: getRGB($alternate);
+  margin: 0.25rem 0.75rem 1.5rem;
+  border: 1px solid transparent;
+  @media (max-width: $break-flg-1) {
+    flex: 1;
+  }
+  &:hover {
+    background-color: getRGBA($alternate, 0.1);
+    border: 1px solid getRGBA($alternate, 0.9);
+  }
+  &:active {
+    background-color: getRGBA($alternate, 0);
+    color: getRGB($alternate);
+    border: 1px solid getRGBA($alternate, 0.5);
+  }
+}
+
+.btn-submit {
+  background-color: getRGBA($primary, 0.8);
+  color: getRGB($secondary);
+  margin: 0.25rem 1.75rem 1.5rem 0.75rem;
+  border: 1px solid transparent;
+  @media (max-width: $break-flg-1) {
+    margin: 0.25rem 0.75rem 1.5rem;
+    flex: 1;
+  }
+  &:hover {
+    background-color: getRGBA($primary, 0.6);
+    border: 1px solid getRGBA($primary, 0.9);
+  }
+  &:active {
+    background-color: getRGBA($primary, 0.2);
+    color: getRGB($alternate);
+    border: 1px solid getRGBA($primary, 0.75);
+  }
+}
+
+.no-query-message {
+  text-align: center;
+  border-radius: 10rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid getRGBA($alternate, 0.1);
+  color: getRGBA($alternate, 0.8);
+}
+
+.poke-find-result-cont {
+  padding: 1rem 0.5rem;
+  .poke-find-result {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.general-info {
+  color: getRGB($alternate);
+  padding: 0 1rem 1rem;
+}

@@ -1,0 +1,58 @@
+@import "../../index.scss";
+
+.slider-container {
+  width: 100%;
+  height: 3rem;
+  padding: 2rem 0 1.5rem;
+
+  .slider-parent {
+    position: relative;
+    overflow: visible;
+  }
+  .slider-track {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.5rem;
+    width: 100%;
+    background-color: getRGBA($primary, 0.125);
+    border-radius: 1rem;
+    z-index: 1;
+  }
+  .slider-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0;
+    width: 0;
+    border-radius: 2rem;
+    background-color: getRGB($primary);
+    border: 2px solid transparent;
+    z-index: 3;
+    transition: 0.2s linear;
+    &:hover {
+      border: 2px solid getRGB($primary);
+      background-color: getRGB($secondary);
+    }
+    &.high {
+      transform: translate(-50%, -50%);
+    }
+  }
+  .slider-range {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.75rem;
+    border-radius: 1rem;
+    background-color: getRGB($primary);
+    z-index: 2;
+    transition: 0.2s linear;
+  }
+  &:hover {
+    .slider-thumb {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+@import "../../index.scss";
+
+.poke-card {
+  min-width: 250px;
+  width: 250px;
+  border-radius: 2.5rem;
+  background-color: getRGBA($primary, 0.15);
+  box-shadow: 0px 0px 7px -2px getRGBA($alternate, 0.75);
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s ease;
+  margin: 0 0.5rem;
+  padding-bottom: 0.7rem;
+
+  .poke-img {
+    width: 250px;
+    height: 250px;
+    transition: 0.5s ease;
+  }
+  .poke-title {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    transition: 0.5s ease;
+    padding: 2rem 1rem 1.5rem;
+    text-align: center;
+
+    .poke-info {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 4rem;
+      right: 0;
+      height: 2rem;
+      width: 2.5rem;
+      background-color: getRGB($primary);
+      color: getRGB($secondary);
+      border-radius: 1rem 0 0 1rem;
+    }
+    .poke-info:hover {
+      color: getRGBA($secondary, 0.75);
+    }
+  }
+
+  &:hover {
+    background-color: getRGB($secondary);
+    box-shadow: 0px 0px 4px 5px getRGBA($alternate, 0.25);
+    .poke-title {
+      color: getRGB($primary);
+    }
+    .poke-img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.poke-card-cont {
+  margin: 0.5rem 0;
+
+  .poke-card {
+    z-index: 10;
+  }
+  &.has-details {
+    margin-bottom: -1.5rem;
+    .card-info {
+      max-height: 20rem;
+    }
+  }
+  .card-info {
+    background-color: getRGBA($alternate, 0.1);
+    margin: 0 0.5rem;
+    z-index: 1;
+    position: relative;
+    top: -2.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    z-index: 1;
+    max-height: 0;
+    transition: 0.5s ease;
+
+    .card-info-pad {
+      height: 2.5rem;
+      margin-bottom: 0.5rem;
+      border-bottom-right-radius: 10rem;
+      border-bottom-left-radius: 10rem;
+      background-color: getRGB($secondary);
+      position: relative;
+      z-index: 9;
+    }
+    .card-info-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      margin: 0.25rem 0.5rem;
+      > p {
+        padding: 0.2rem 0.5rem;
+      }
+      > p:first-child {
+        flex: 2;
+        text-align: right;
+        color: getRGB($alternate);
+      }
+      > p:last-child {
+        flex: 1;
+        color: getRGB($primary);
+        font-family: $font-ubuntu-mono;
+        font-size: 1.25rem;
+      }
+    }
+    .card-info-id {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 3rem 0.5rem 0.5rem 0.25rem;
+      background-color: getRGB($secondary);
+      border-bottom-right-radius: 1rem;
+      box-shadow: 3px 3px 7px -5px getRGB($alternate);
+      &.poke-id {
+        font-family: $font-ubuntu-mono;
+        font-size: 1.25rem;
+        span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "../../index.scss";
+
+$break-mobile-1: 425px;
+
+.type-card-holder {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0.5rem 0.125rem;
+}
+
+.type-poke-card-holder {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.poke-type-info-container {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.125rem;
+}

@@ -1,0 +1,80 @@
+@import "../../index.scss";
+
+.ability-card-cont {
+  margin: 0.5rem 0.25rem;
+  .ability-card {
+    min-width: 15rem;
+    padding: 0.25rem;
+    background-color: getRGBA($primary, 0.125);
+    border-radius: 1.75rem;
+    .card-head {
+      padding: 1.5rem 1.5rem;
+      text-align: center;
+      border-radius: 1.5rem;
+      background-color: getRGB($secondary);
+      p {
+        font-size: 1.125rem;
+      }
+      .effect-ability {
+        margin-left: 0.5rem;
+        &:hover {
+          color: getRGBA($primary, 0.5);
+        }
+      }
+    }
+    .card-body {
+      padding: 1.25rem 1.5rem 0.5rem;
+      text-align: center;
+      color: getRGB($alternate);
+      position: relative;
+      .info-button {
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 10rem;
+        background-color: getRGB($secondary);
+        color: getRGB($primary);
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.75rem;
+      }
+    }
+  }
+  .hidden-tag {
+    width: 60%;
+    margin: 0 auto;
+    background-color: getRGBA($alternate, 0.1);
+    color: getRGBA($alternate, 0.8);
+    text-align: center;
+    padding: 0.25rem 0.5rem 0.5rem;
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+.ability-effect-block {
+  display: inline-block;
+  width: 15rem;
+  padding: 0.5rem;
+  background-color: getRGB($primary);
+  color: getRGBA($secondary, 1);
+  border-radius: 1rem;
+  max-height: 15rem;
+  overflow-y: auto;
+  font-size: 1rem;
+  text-align: left;
+  > h4 {
+    margin-bottom: 0.5rem;
+  }
+  hr.hr-divide {
+    border: 0;
+    height: 4px;
+    background-color: getRGB($secondary);
+    box-shadow: inset 0px 0px 5px getRGBA($primary, 0.5);
+    border-radius: 1rem;
+    margin: 0.75rem 0;
+  }
+}

@@ -1,0 +1,194 @@
+@import "../../index.scss";
+
+.poke-moves-container {
+  min-height: 20rem;
+  overflow-x: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.5rem 0.5rem 2rem;
+}
+
+.move-card-cont {
+  position: relative;
+  margin: 0.5rem;
+  z-index: 0;
+  .move-card-index {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: -2rem;
+    z-index: -1;
+    padding: 2.125rem 0.75rem 0.5rem;
+    border-radius: 0 0 1rem 1rem;
+    background-color: getRGBA($primary, 0.75);
+    color: getRGB($secondary);
+    .index-padding {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 2rem;
+      border-bottom-left-radius: 10rem;
+      background-color: getRGB($secondary);
+      width: 100%;
+    }
+  }
+}
+
+.move-card {
+  width: 19rem;
+  background-color: getRGBA($primary, 0.1);
+  border-radius: 2rem;
+  padding: 0.25rem;
+  position: relative;
+  z-index: 10;
+
+  .card-head {
+    padding: 1.25rem 1rem;
+    background-color: getRGB($secondary);
+    border-radius: 2rem;
+  }
+  .card-body {
+    padding: 0.5rem 1rem 1rem;
+  }
+}
+
+.move-id-name-chip {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: getRGB($primary);
+  border-radius: 10rem;
+  margin-bottom: 0.25rem;
+  color: getRGB($secondary);
+  > p:first-child {
+    padding: 0.5rem 1rem;
+    background-color: getRGB($secondary);
+    color: getRGB($primary);
+    border-radius: 0 10rem 10rem 0;
+    font-size: 1.5rem;
+    font-family: $font-ubuntu-mono;
+    &::before {
+      content: "#";
+      font-size: 1.25rem;
+    }
+  }
+  > p:last-child {
+    padding-left: 1rem;
+    font-size: 1rem;
+  }
+}
+
+.card-rating-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0.125rem;
+  > p {
+    color: getRGB($alternate);
+    margin-right: 0.5rem;
+    min-width: 17%;
+  }
+  .perc-rating {
+    flex: 1;
+    height: 0.5rem;
+    border-radius: 2rem;
+    background-color: getRGBA($primary, 0.125);
+    overflow: hidden;
+    .perc-rating-fill {
+      background-color: getRGB($primary);
+      border-radius: 2rem;
+      height: 100%;
+    }
+  }
+  .only-value {
+    color: getRGB($primary);
+  }
+}
+
+.move-type-chip {
+  padding: 0.5rem 0.75rem;
+  width: 70%;
+  margin: 0.25rem auto;
+  border-radius: 10rem;
+  > p {
+    text-align: center;
+    color: getRGB($secondary);
+  }
+}
+
+.move-hits-range {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: getRGB($alternate);
+  padding: 0.25rem 0.5rem;
+  .symb {
+    color: getRGBA($alternate, 0.25);
+  }
+  span {
+    &:first-child,
+    &:last-child {
+      color: getRGBA($primary, 0.75);
+    }
+  }
+}
+
+.move-effect-block {
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: getRGB($primary);
+  color: getRGBA($secondary, 0.9);
+  border-radius: 1rem;
+  max-height: 20rem;
+  overflow-y: auto;
+  > h4 {
+    margin-bottom: 0.5rem;
+  }
+  hr.hr-divide {
+    border: 0;
+    height: 4px;
+    background-color: getRGB($secondary);
+    box-shadow: inset 0px 0px 5px getRGBA($primary, 0.5);
+    border-radius: 1rem;
+    margin: 0.75rem 0;
+  }
+}
+
+.move-effect-button {
+  padding: 0.5rem 0.75rem;
+  background-color: getRGBA($primary, 0.125);
+  color: getRGB($alternate);
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  cursor: default;
+}
+
+.move-stat-effect-board {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding: 0.5rem 0;
+  > .stat-brd-1 {
+    flex: 1;
+    p {
+        text-align: center;
+    }
+    > p:first-child {
+      margin-bottom: 0.25rem;
+      color: getRGB($alternate);
+    }
+    > p:last-child {
+      font-family: $font-ubuntu-mono;
+      font-size: 1.25rem;
+      color: getRGB($primary);
+      .no-val {
+          color: getRGBA($alternate, 0.5);
+      }
+    }
+  }
+}

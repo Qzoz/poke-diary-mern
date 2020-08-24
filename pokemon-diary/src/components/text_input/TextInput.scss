@@ -1,0 +1,49 @@
+@import "../../index.scss";
+
+.text-input {
+  border: 0;
+  outline: 0;
+  background-color: getRGBA($secondary, 1);
+  width: 100%;
+  font-size: 1.125rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  transition: 0.2s ease;
+  position: relative;
+  color: getRGB($primary);
+  border: 1px solid transparent;
+
+  ::placeholder {
+    color: getRGBA($alternate, 0.5);
+  }
+  &:hover {
+    border: 1px solid getRGBA($primary, 0.25);
+    background-color: getRGBA($secondary, 0.8);
+  }
+}
+
+.input-container {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 5;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 0.125rem;
+    background-color: getRGB($primary);
+    transition: 0.4s ease;
+  }
+  &.input-focused {
+    .text-input {
+      border-radius: 0;
+      border: 1px solid transparent;
+    }
+    &::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import "../../index.scss";
+
+.tooltip {
+  position: relative;
+  .tooltip-content {
+    display: inline-block;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    visibility: hidden;
+    transition: 0.1s ease;
+    opacity: 0;
+    z-index: 10000;
+    overflow: visible;
+  }
+  &:hover,
+  &:active {
+    .tooltip-content {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &.center {
+    .tooltip-content {
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+  &.vert {
+    .tooltip-content {
+      transform: translate(-50%, 50%);
+    }
+  }
+}

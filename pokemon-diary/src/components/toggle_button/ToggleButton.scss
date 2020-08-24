@@ -1,0 +1,58 @@
+@import "../../index.scss";
+
+.text-toggle-button {
+  display: inline-block;
+  width: 8rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: getRGB($secondary);
+  color: getRGB($alternate);
+  border-radius: 0.25rem;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  user-select: none;
+  overflow: hidden;
+  white-space: pre;
+  text-overflow: ellipsis;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 50%;
+    left: 50%;
+    transition: 0.4s ease;
+    background-color: getRGBA($alternate, 0.75);
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+
+  &.onn {
+    color: getRGB($primary);
+    &::after,
+    &::before {
+      left: 0;
+      background-color: getRGB($primary);
+    }
+    &:hover {
+      &::after,
+      &::before {
+        left: 0;
+        width: 60%;
+      }
+    }
+  }
+  &:hover {
+    &::after,
+    &::before {
+      left: 40%;
+      width: 60%;
+    }
+  }
+}
