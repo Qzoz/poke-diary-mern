@@ -2,6 +2,9 @@ export default {
   imgPokemon: (id, spec = "", ext = ".png") => {
     return `/poke/diary/img/${id}${spec}${ext}`;
   },
+  imgPokemonSmall: (id, spec = "", ext = ".png") => {
+    return `/poke/diary/img/sm/${id}${spec}${ext}`;
+  },
   imgTypePlain: (name, ext = ".png") => {
     return `/poke/diary/type/img/plain/${name}${ext}`;
   },

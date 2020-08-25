@@ -15,6 +15,10 @@ serverApp.use(
   express.static(path.join(__dirname, "assets", "poke-img"))
 );
 serverApp.use(
+  "/poke/diary/img/sm",
+  express.static(path.join(__dirname, "assets", "poke-img-m"))
+);
+serverApp.use(
   "/poke/diary/type/img",
   express.static(path.join(__dirname, "assets", "poke-type-img"))
 );
@@ -29,8 +33,9 @@ const db_pw = process.env.DB_PW;
 const db_nm = process.env.DB_NM;
 const cl_ad = process.env.CL_AD;
 
-const db_url = `mongodb+srv://${db_un}:${db_pw}@${cl_ad}/${db_nm}?retryWrites=true&w=majority`;
-// const db_url_local = "mongodb://localhost:27017/pokeDB";
+let db_url = `mongodb+srv://${db_un}:${db_pw}@${cl_ad}/${db_nm}?retryWrites=true&w=majority`;
+if (process.env.NODE_ENV !== "production")
+  db_url = "mongodb://localhost:27017/pokeDB";
 mongoose.connect(db_url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

@@ -11,7 +11,7 @@ class PokeAvatars extends Component {
     const pokeName = capitalizedName(this.props.pokeData.name);
     const pokeId = getPokeIdFromUrl(this.props.pokeData.url);
     const avatarSize = this.props.avatarSize ? this.props.avatarSize : 1;
-    const pokeImgURL = pokeUrls.imgPokemon(pokeId);
+    const pokeImgURL = pokeUrls.imgPokemonSmall(pokeId);
     return (
       <div className="avatar-container">
         <div className={`avatar-image-cont avt-size-${avatarSize}`}>

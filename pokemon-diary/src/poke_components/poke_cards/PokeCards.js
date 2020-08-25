@@ -9,7 +9,7 @@ import { capitalizedName } from "../../misc/poke_misc";
 class PokeCards extends Component {
   constructor(props) {
     super(props);
-    this.pokeImgURL = pokeUrls.imgPokemon(props.pokeId);
+    this.pokeImgURL = pokeUrls.imgPokemonSmall(props.pokeId);
   }
 
   render() {
